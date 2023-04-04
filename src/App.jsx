@@ -2,15 +2,16 @@ import { useState } from 'react'
 
 import Attribution from '@/components/Attribution'
 import DateForm from '@/components/DateForm'
+import AgeDisplay from '@/components/AgeDisplay'
 
 import { intervalToDuration } from 'date-fns'
 
 import './App.css'
 
 function App() {
-  const [day, setDay] = useState('')
-  const [month, setMonth] = useState('')
-  const [year, setYear] = useState('')
+  const [days, setDays] = useState('')
+  const [months, setMonths] = useState('')
+  const [years, setYears] = useState('')
 
   const setDate = (day, month, year) => {
     const now = new Date()
@@ -20,31 +21,17 @@ function App() {
       start: myDate,
       end: now,
     })
-    console.log('duration', duration)
 
-    setYear(duration.years)
-    setMonth(duration.months)
-    setDay(duration.days)
+    setYears(duration.years)
+    setMonths(duration.months)
+    setDays(duration.days)
   }
 
   return (
     <div className="container">
       <main>
         <DateForm setDate={setDate} />
-        <div className="grid">
-          <div>
-            <h2>Years</h2>
-            <p>{year}</p>
-          </div>
-          <div>
-            <h2>Months</h2>
-            <p>{month}</p>
-          </div>
-          <div>
-            <h2>Days</h2>
-            <p>{day}</p>
-          </div>
-        </div>
+        <AgeDisplay years={years} months={months} days={days} />
         <Attribution />
       </main>
     </div>
