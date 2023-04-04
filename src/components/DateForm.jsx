@@ -1,5 +1,7 @@
 import { useForm } from 'react-hook-form'
 import { useMediaQuery } from 'usehooks-ts'
+import { isValid, parse } from 'date-fns'
+import { enGB } from 'date-fns/locale'
 
 import Errors from '@/components/Errors'
 
@@ -12,15 +14,34 @@ const DateForm = ({ setDate }) => {
   const {
     register,
     handleSubmit,
+    setError,
+    clearErrors,
     formState: { errors },
   } = useForm()
 
   const onSubmit = (data) => {
-    console.log('DATA', data)
-    setDate(data.day, data.month, data.year)
+    const day = parseInt(data.day)
+    const month = parseInt(data.month)
+    const year = parseInt(data.year)
+
+    const parsedDate = parse(`${day}/${month}/${year}`, 'P', new Date(), {
+      locale: enGB,
+    })
+    const isValidDate = isValid(parsedDate)
+
+    if (isValidDate) {
+      clearErrors()
+      setDate(data.day, data.month, data.year)
+    } else {
+      setError('day', {
+        type: 'manual',
+        message: 'Must be a valid date',
+      })
+      setError('month', { type: 'manual' })
+      setError('year', { type: 'manual' })
+    }
   }
 
-  console.log('errors', errors)
   return (
     <form className="date-form" onSubmit={handleSubmit(onSubmit)}>
       <div className="grid">
