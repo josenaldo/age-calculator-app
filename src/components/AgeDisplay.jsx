@@ -1,9 +1,22 @@
+import './AgeDisplay.css'
+
 const AgeDisplay = ({ years, months, days }) => {
   return (
-    <div>
-      <h2>Years {years ? years : '--'} </h2>
-      <h2>Months {months ? months : '--'} </h2>
-      <h2>Days {days ? days : '--'} </h2>
+    <div className="age-display">
+      <div className="years">
+        <span className="years-value">{years ? years : '--'}</span>
+        <span className="years-label"> years</span>
+      </div>
+
+      <div className="months">
+        <span className="months-value">{months ? months : '--'}</span>
+        <span className="months-label"> months</span>
+      </div>
+
+      <div className="days">
+        <span className="days-value">{days ? days : '--'}</span>
+        <span className="days-label"> days</span>
+      </div>
     </div>
   )
 }

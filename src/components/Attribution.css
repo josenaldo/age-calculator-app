@@ -1,7 +1,10 @@
 .attribution {
-  font-size: 11px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+  font-size: 0.7rem;
   text-align: center;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--primary);
 }

@@ -1,7 +1,46 @@
 @import url('./styles/root.css');
+@import url('./styles/fonts.css');
+@import url('./styles/input.css');
 @import url('./styles/links.css');
 @import url('./styles/buttons.css');
 
+html {
+  font-family: var(--font-family);
+  background-color: var(--off-white);
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}
+
 main {
-  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 3rem clamp(15px, 3vw, 60vw);
+  margin: 0;
+}
+
+article {
+  max-height: 600px;
+  background-color: var(--white);
+  width: clamp(300px, 90vw, 600px);
+  padding: 3rem clamp(1rem, 2vw, 2rem);
+  border-radius: 4% 4% clamp(15%, 20vw, 26%) 3% / 5% 5% clamp(20%, 20vw, 30%) 3%;
+  box-sizing: border-box;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
+  grid-column-gap: clamp(0.3rem, 2vw, 1rem);
+  grid-row-gap: var(--grid-spacing-vertical);
+  margin: 0;
+}
+
+.grid > * {
+  min-width: 0;
 }

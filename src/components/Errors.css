@@ -1,0 +1,15 @@
+.errors {
+  font-size: clamp(0.6rem, 2vw, 0.65rem);
+  margin-top: 0.5rem;
+  font-weight: 400;
+  color: var(--danger);
+  font-style: italic;
+}
+
+.error input {
+  outline: 1px solid var(--danger);
+}
+
+.error label {
+  color: var(--danger);
+}

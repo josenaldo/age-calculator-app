@@ -28,13 +28,13 @@ function App() {
   }
 
   return (
-    <div className="container">
-      <main>
+    <main>
+      <article>
         <DateForm setDate={setDate} />
         <AgeDisplay years={years} months={months} days={days} />
-        <Attribution />
-      </main>
-    </div>
+      </article>
+      <Attribution />
+    </main>
   )
 }
 

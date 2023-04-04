@@ -1,0 +1,30 @@
+
+input {
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-family: var(--font-family);
+  color: var(--off-blackey);
+  background-color: var(--white);
+  border: 1px solid var(--light-grey);
+  border-radius: clamp(0.1rem, 2vw, 0.3rem);
+  padding: 0.5rem 1rem;
+  overflow: visible;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: var(--smokey-grey);
+}
+
+input:focus-visible {
+  outline: 1px solid var(--primary);
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--smokey-grey);
+  text-transform: uppercase;
+  width: auto;
+  letter-spacing: 0.2rem;
+}
