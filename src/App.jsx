@@ -5,7 +5,7 @@ import DateForm from '@/components/DateForm'
 import AgeDisplay from '@/components/AgeDisplay'
 
 import { intervalToDuration } from 'date-fns'
-import { createHistoricalDate } from '@/utils/DateUtils'
+import { createHistoricalDate } from '@/utils/dateUtils'
 
 import './App.css'
 

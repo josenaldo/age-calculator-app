@@ -7,7 +7,7 @@ import { isValid } from 'date-fns'
 import { ReactComponent as ArrowIcon } from '@/assets/images/icon-arrow.svg'
 import Errors from '@/components/Errors'
 
-import { createHistoricalDate } from '@/utils/DateUtils'
+import { createHistoricalDate } from '@/utils/dateUtils'
 import './DateForm.css'
 
 const DateForm = ({ setDate }) => {
