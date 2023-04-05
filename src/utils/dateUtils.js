@@ -11,10 +11,9 @@
  */
 const createHistoricalDate = (year, month, day) => {
   const referenceDate = new Date(1970, 0, 1)
-  const targetDate = new Date(referenceDate.getTime())
-  targetDate.setFullYear(year, month - 1, day)
+  referenceDate.setFullYear(year, month - 1, day)
 
-  return targetDate
+  return referenceDate
 }
 
 export { createHistoricalDate }
