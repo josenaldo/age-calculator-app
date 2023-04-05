@@ -62,6 +62,8 @@ During the development of this project, I was able to use the [React Hook Form](
 
 In addition, I used the [Vite](https://vitejs.dev/) build tool in this project instead of Create React App (CRA), which made the development process faster and more efficient. I also used [degit](https://github.com/Rich-Harris/degit) to start the project from a [template](https://github.com/josenaldo/vite-js-react-minimal), which made it easier to get started quickly.
 
+A last interesting thing I learned was that it is that the Date object in Javascript cannot be created with a date before 1900. To do this I used a workaround that I learn by chatting with Gepeto (ChatGPT). He is a good partner to talk about programming and other things, but don't tell him that I told you that. And don't let him do all the work. He hallucinates a lot.
+
 Overall, this project allowed me to apply my knowledge of React and other technologies in a practical way, while also learning new skills such as using Vite and degit.
 
 ### Continued development
