@@ -1,11 +1,13 @@
+import PropTypes from 'prop-types'
+
 import { useForm } from 'react-hook-form'
 import { useMediaQuery } from 'usehooks-ts'
-import { isValid, parse } from 'date-fns'
-import { enGB } from 'date-fns/locale'
+import { isValid } from 'date-fns'
 
 import { ReactComponent as ArrowIcon } from '@/assets/images/icon-arrow.svg'
 import Errors from '@/components/Errors'
 
+import { createHistoricalDate } from '@/utils/DateUtils'
 import './DateForm.css'
 
 const DateForm = ({ setDate }) => {
@@ -24,10 +26,8 @@ const DateForm = ({ setDate }) => {
     const month = parseInt(data.month)
     const year = parseInt(data.year)
 
-    const parsedDate = parse(`${day}/${month}/${year}`, 'P', new Date(), {
-      locale: enGB,
-    })
-    const isValidDate = isValid(parsedDate)
+    const historicalDate = createHistoricalDate(year, month, day)
+    const isValidDate = isValid(historicalDate)
 
     if (isValidDate) {
       clearErrors()
@@ -113,6 +113,10 @@ const DateForm = ({ setDate }) => {
       </div>
     </form>
   )
+}
+
+DateForm.propTypes = {
+  setDate: PropTypes.func.isRequired,
 }
 
 export default DateForm

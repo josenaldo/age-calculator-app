@@ -5,33 +5,34 @@ import DateForm from '@/components/DateForm'
 import AgeDisplay from '@/components/AgeDisplay'
 
 import { intervalToDuration } from 'date-fns'
+import { createHistoricalDate } from '@/utils/DateUtils'
 
 import './App.css'
 
-function App() {
-  const [days, setDays] = useState('')
-  const [months, setMonths] = useState('')
-  const [years, setYears] = useState('')
+const App = () => {
+  const [age, setAge] = useState(null)
 
   const setDate = (day, month, year) => {
     const now = new Date()
-    const myDate = new Date(year, month - 1, day)
+    const historicalDate = createHistoricalDate(year, month, day)
 
     const duration = intervalToDuration({
-      start: myDate,
+      start: historicalDate,
       end: now,
     })
 
-    setYears(duration.years)
-    setMonths(duration.months)
-    setDays(duration.days)
+    setAge({
+      days: duration.days,
+      months: duration.months,
+      years: duration.years,
+    })
   }
 
   return (
     <main>
       <article>
         <DateForm setDate={setDate} />
-        <AgeDisplay years={years} months={months} days={days} />
+        <AgeDisplay age={age} />
       </article>
       <Attribution />
     </main>
