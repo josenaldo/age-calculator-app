@@ -3,10 +3,10 @@ import { useMediaQuery } from 'usehooks-ts'
 import { isValid, parse } from 'date-fns'
 import { enGB } from 'date-fns/locale'
 
+import { ReactComponent as ArrowIcon } from '@/assets/images/icon-arrow.svg'
 import Errors from '@/components/Errors'
 
 import './DateForm.css'
-import { ReactComponent as ArrowIcon } from '@/assets/images/icon-arrow.svg'
 
 const DateForm = ({ setDate }) => {
   const matches = useMediaQuery('(min-width: 767px)')

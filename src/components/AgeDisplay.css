@@ -9,8 +9,6 @@
   flex-direction: column;
 }
 
-.years-value,
-.months-value,
-.days-value {
+.age-display .value {
   color: var(--primary);
 }
