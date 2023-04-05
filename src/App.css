@@ -21,6 +21,7 @@ main {
   min-height: 100vh;
   padding: 3rem clamp(15px, 3vw, 60vw);
   margin: 0;
+  box-sizing: border-box;
 }
 
 article {
